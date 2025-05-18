@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS ingresos_caja (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATETIME NOT NULL,
+    monto DECIMAL(10,2) NOT NULL,
+    concepto VARCHAR(255) NOT NULL,
+    usuario VARCHAR(50) NOT NULL,
+    anulado BOOLEAN NOT NULL DEFAULT FALSE,
+    id_caja INT NOT NULL,
+    FOREIGN KEY (id_caja) REFERENCES cajas(id)
+);
